@@ -6,7 +6,7 @@
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 21:24:40 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 22:47:04 by cbettoni         ###   ########.fr       */
+/*   Updated: 2022/03/27 20:52:25 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar(nb + 48);
 	}
-	if (nb > 10)
+	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
