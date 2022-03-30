@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 17:55:32 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 18:04:37 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcpy(char *s1, char *s2)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while(s2[i] != '\0')
 	{
+		s1[i] = s2[i];
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	s1[i] = '\0';
+	return (s1);
 }
-
-/*int	main(void)
-{
-	char	source[] = "revoir";
-	char	destination[] = "au ";
-
-	printf("%s", ft_strcat(destination, source));
-	return (0);
-}*/

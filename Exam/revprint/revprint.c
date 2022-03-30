@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   revprint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/29 15:18:23 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 11:30:44 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+int 	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
-
+	
 	i = 0;
-	while (dest[i] != '\0')
-	{
+	while (str[i] != '\0')
 		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
 
-/*int	main(void)
+char	*ft_rev_print(char *str)
 {
-	char	source[] = "revoir";
-	char	destination[] = "au ";
+	int	i;
 
-	printf("%s", ft_strcat(destination, source));
-	return (0);
-}*/
+	i = ft_strlen(str);
+	i--;
+	while (i >= 0)
+	{
+		write(1, &str[i], 1);
+		i--;
+	}
+	return(str);
+}
+
+int	main(void)
+{
+	char str[] = "tesst01";
+	ft_rev_print(str);
+}

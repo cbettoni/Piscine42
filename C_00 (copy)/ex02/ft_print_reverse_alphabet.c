@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 12:43:20 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 12:59:20 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+
+#include<unistd.h>
+
+void	ft_print_reverse_alphabet(void)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	source[] = "revoir";
-	char	destination[] = "au ";
-
-	printf("%s", ft_strcat(destination, source));
-	return (0);
-}*/
+	ft_print_reverse_alphabet();
+	return(0);
+}

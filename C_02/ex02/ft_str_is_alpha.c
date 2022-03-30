@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>
+#include <unistd.h>
 #include <string.h>
-#include <stdio.h>*/
+#include <stdio.h>
 
 int	ft_str_is_alpha(char *str)
 {

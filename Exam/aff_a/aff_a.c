@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/28 18:54:58 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/28 22:25:18 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+#include <unistd.h>
+
+int	ft_putchar(char c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	source[] = "revoir";
-	char	destination[] = "au ";
-
-	printf("%s", ft_strcat(destination, source));
+	write(1, "a\n", 2);
 	return (0);
-}*/
+}

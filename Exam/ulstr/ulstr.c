@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 18:11:58 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 18:25:16 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+#include <unistd.h>
+
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	argc == 2;
+	while (argv[1][i] != '\0')
 	{
-		i++;
+		if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+			argv[1][i] += 32;
+		else if (argv[1][i] >= 'a' && argv[1][i]<- 'z')
+			argv[1][i] -= 32;
+		write(1, &argv[1][i], 1);
+			i++;
 	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-/*int	main(void)
-{
-	char	source[] = "revoir";
-	char	destination[] = "au ";
-
-	printf("%s", ft_strcat(destination, source));
+	write(1, "\n", 1);
 	return (0);
-}*/
+}

@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 16:45:32 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 16:55:30 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+void	ft_print_numbers(void)
 {
-	char	source[] = "revoir";
-	char	destination[] = "au ";
+	int	i;
 
-	printf("%s", ft_strcat(destination, source));
+	i = '0';
+	while (i <= '9')
+	{
+		ft_putchar(i);
+		i++;
+	}
+}
+
+int	main(void)
+{
+	ft_print_numbers();
 	return (0);
-}*/
+}

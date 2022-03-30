@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet2.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 14:51:03 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 15:34:18 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+void	ft_print_reverse_alphabet2(void)
 {
-	char	source[] = "revoir";
-	char	destination[] = "au ";
+	char	lettre;
 
-	printf("%s", ft_strcat(destination, source));
-	return (0);
-}*/
+	lettre = 'z';
+	while (lettre >= 'a')
+	{
+		ft_putchar(lettre);
+		lettre--;
+	}
+}
+
+int	main(void)
+{
+	ft_print_reverse_alphabet2();
+	return(0);
+}

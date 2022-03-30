@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbettoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 16:21:37 by cbettoni          #+#    #+#             */
-/*   Updated: 2022/03/26 13:47:59 by cbettoni         ###   ########.fr       */
+/*   Created: 2022/03/30 19:44:24 by cbettoni          #+#    #+#             */
+/*   Updated: 2022/03/30 20:41:54 by cbettoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
-
-/*int	main(void)
-{
-	char	source[] = "revoir";
-	char	destination[] = "au ";
-
-	printf("%s", ft_strcat(destination, source));
-	return (0);
-}*/
