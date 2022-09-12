@@ -2,4 +2,4 @@
 
 Exercices done during the Piscine of 42 School
 
-Shall & C
+Shell & C
